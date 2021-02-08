@@ -8,7 +8,14 @@ inittf:
 	sudo ln -s /usr/bin/terraform /usr/local/bin/terraform
 	terraform -v
 
+# https://stackoverflow.com/a/7367903
+guard-%:
+	@ if [ "${${*}}" = "" ]; then \
+	    echo "Environment variable $* not set"; \
+	    exit 1; \
+	fi
+
 .PHONY: initgit
-initgit:
-	git config --global user.name "Gavin Chun Jin 2"
-	git config --global user.email "raverunner@gmail.com"
+initgit: guard-EMAIL
+	git config --global user.name "Gavin Chun Jin"
+	git config --global user.email ${EMAIL}
