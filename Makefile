@@ -1,3 +1,7 @@
+.PHONY: all
+all: initgit inittf
+	cat ~/.ssh/config
+
 .PHONY: inittf
 inittf:
 	curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
