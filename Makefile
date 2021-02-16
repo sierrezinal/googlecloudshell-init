@@ -23,3 +23,13 @@ guard-%:
 initgit: guard-EMAIL
 	git config --global user.name "Gavin Chun Jin"
 	git config --global user.email ${EMAIL}
+
+.PHONY: dldoctl
+dldoctl:
+	wget https://github.com/digitalocean/doctl/releases/download/v1.56.0/doctl-1.56.0-linux-amd64.tar.gz
+	sudo tar xf doctl-1.56.0-linux-amd64.tar.gz -C /usr/local/bin
+	mkdir -p ~/.config/
+	doctl auth init --context devops
+	doctl auth switch --context devops
+	doctl account get
+
