@@ -26,8 +26,8 @@ initgit: guard-EMAIL
 
 .PHONY: dldoctl
 dldoctl:
-	wget https://github.com/digitalocean/doctl/releases/download/v1.56.0/doctl-1.56.0-linux-amd64.tar.gz
-	sudo tar xf doctl-1.56.0-linux-amd64.tar.gz -C /usr/local/bin
+	wget https://github.com/digitalocean/doctl/releases/download/v1.56.0/doctl-1.61.0-linux-amd64.tar.gz
+	sudo tar xf doctl-1.61.0-linux-amd64.tar.gz -C /usr/local/bin
 	mkdir -p ~/.config/
 	doctl auth init --context devops
 	doctl auth switch --context devops
