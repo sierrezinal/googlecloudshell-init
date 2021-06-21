@@ -1,5 +1,5 @@
 .PHONY: all
-all: initgit inittf
+all: initgit
 	cat ~/.ssh/config
 
 .PHONY: inittf
